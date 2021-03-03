@@ -1,0 +1,20 @@
+
+
+    <% if !@messages.blank? %>
+        <% @messages.each do |num| %>
+            <div class="edit_message_container">
+
+                <div><h2><%= num['title'] %></h2></div>
+                <div style='padding-top:25px;float:left;position:relative;'><%= num['created_at'].strftime("%B %-d, %Y") %></div>
+
+                <%= link_to "View", mess_path(num), :class => 'link_input_button_message' %>
+                <%= link_to "Edit", ed_path(num), :class => 'link_input_button_message' %>
+                <%= link_to "Delete", ed_path(num), data: {confirm: 'Are you sure you want to delete?'}, method: :delete, :class => 'link_input_button_message' %>
+                            
+            </div>
+    <% end %>
+    <% else %>
+                        
+    <div class="edit_message_container"><h4 style="text-align:center;"> There are no messages!</h4></div>
+
+    <% end %>

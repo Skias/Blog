@@ -1,0 +1,60 @@
+// Place all the styles related to the edit_message controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/* ALL CSS FROM HERE AND DOWN IS FOR edit_message.html.erb*/
+.link_input_button_message{
+    color:white;
+    background-color: #4299e1;
+    border-width: 0px;
+    border-radius: 0px;
+    appearance: none;
+    text-align: center;
+    text-decoration: none;
+    padding:10px;
+    margin-right:5px;
+    position:relative;
+    float:right;
+}
+
+.edit_message_container{
+    width:800px;
+    height:100px;
+    padding:0 50px 0 50px;
+    margin-bottom:15px;
+    margin-left:20%;
+    background-color: white;
+}
+
+/* ALL CSS FROM HERE AND DOWN IS FOR edit.html.erb*/
+
+.edit_container{
+    width:800px;
+    padding:0 50px 0 50px;
+    margin-bottom:15px;
+    margin-left:20%;
+    background-color: white;
+}
+.edit_input_button{
+    color:white;
+    background-color: #4299e1;
+    border-width: 0px;
+    border-radius: 0px;
+    appearance: none;
+    text-align: center;
+    text-decoration: none;
+    padding:7px 10px 7px 10px;
+}
+
+.edit_input_field{
+    appearance: none;
+    display: block;
+    width: 100%;
+    border-style: solid;
+    border-radius: 0px;
+    border-width:1px;
+    border-color:rgb(224, 224, 224);
+    padding: 7px 0 7px 10px;
+    margin-bottom: 10px;
+}

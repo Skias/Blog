@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="container-fluid head_container">
+
+          <ul class="nav justify-content-center">
+
+            <li class="nav-item">
+              <a class="nav-link active link_align" aria-current="page" href="/index">Blog</a>
+            </li>
+
+            <% if current_user %>
+              <li class="nav-item">
+                <a class="nav-link active link_align" aria-current="page" href="/edit_message">Edit Messages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link_align" aria-current="page" href="/create_message">Create Message</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link active link_align" %>
+              </li>
+
+            <% else %>
+
+              <li class="nav-item">
+                <a class="nav-link active link_align" aria-current="page" href="/login">Log in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link_align" aria-current="page" href="/register">Register</a>
+              </li>
+                
+            <% end %>
+          
+        </ul>
+
+    </div>
+
+  <div class="container-fluid" style="background-color:#F5F5F5; min-height:590px;">
+
+<% if flash[:notice] %>
+  <div style="height:75px; text-align:center;">
+      <h4><%= flash[:notice] %></h4>
+  </div>
+<% else %>
+  <div style="height:75px"></div>
+<% end %>
+
+<%= yield %>
+ 
+  </div>
+
+</body>
+</html>

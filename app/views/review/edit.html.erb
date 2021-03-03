@@ -1,0 +1,6 @@
+<div class="review_container">
+    <%= form_for :rev do |r| %>
+        <%= r.text_field :review, :value => @review.review, :class => 'review_input_field' %>
+        <%= r.submit 'edit', :class => 'review_input_button' %>
+    <% end %>
+</div>

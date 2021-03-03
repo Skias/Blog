@@ -1,0 +1,38 @@
+<div class="form_container">
+
+    <div><h1><%= @message.title %></h1></div>
+
+    <div><%= @message.description %></div>
+
+
+    <%= form_for :rev, :html => {:class => 'form_comment'} do |r| %>
+        <%= r.text_field :review, :class => 'input_field', :placeholder => 'Add a comment'%>
+        <%= r.submit 'Post review', :class => 'input_button' %>
+    <% end %>
+
+</div>
+
+<% if !@review.blank? %>
+
+    <% @review.each do |num|%>
+                       
+    <div class="form_container_review">
+                        
+        <div style="padding:10px 0 10px 0 ; display:inline-block; position:relative; float:left;"><%= num[:review] %></div>
+                        
+        <% if num[:user_id] == session[:user_id]%>
+        <div><%= link_to "Delete", "/review/#{num[:id]}", method: :delete,:data => {:confirm => 'Are you sure?'}, :class => 'link_input_button'%></div>
+            <div><%= link_to "Edit", "/review/#{num[:id]}", :class => 'link_input_button' %></div>
+        <% end %>
+    </div>
+
+    <% end %>
+
+    <% else %>
+        <div class="form_container"> <h4> No Comments </h4> </div>
+    <% end %>
+
+
+
+
+

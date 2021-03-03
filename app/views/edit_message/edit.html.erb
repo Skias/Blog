@@ -1,0 +1,14 @@
+<div class="edit_container">
+
+    <%= form_for(:update) do |f|  %>
+
+        <%= f.text_field :title, value: @messages[0][:title], :class => 'edit_input_field', placeholder: 'Title'%>
+
+
+        <%= f.text_area :description, value: @messages[0][:description], :class => 'edit_input_field', placeholder: 'Tell your story :)', rows: 10, cols: 40 %>
+
+        <%= f.submit 'Update', class: 'edit_input_button'%>
+            
+    <% end %>
+
+</div>

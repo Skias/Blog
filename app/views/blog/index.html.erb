@@ -1,0 +1,21 @@
+           
+<% if !@messages.blank? %>
+
+<div style="width:960px; margin-left:10%; overflow: hidden;">
+
+    <%@messages.each do |num| %>
+
+        <div class="blog_post">
+            <div><h4> <%= link_to num['title'], mess_path(num), :class => 'link_blog_decoration'%></h4></div>
+            <div><%= num['created_at'].strftime("%B %-d, %Y") %></div>
+        </div>
+
+    <% end %>
+
+    </div>    
+    <% else %> 
+
+        <h2>There are no blog posts!, Make the first one!</h2>
+
+    <% end %>
+<div>

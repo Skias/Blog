@@ -1,0 +1,80 @@
+// Place all the styles related to the blog controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.blog_post{
+    height: 300px;
+    width:300px;
+    background-color:white;
+    padding:50px;
+    margin:10px;
+    position: relative;
+    float:left;
+}
+
+.link_blog_decoration{
+    text-decoration: none;
+    color: black;
+}
+
+.form_container{
+    width:800px;
+    padding:0 50px 0 50px;
+    margin-bottom:15px;
+    margin-left:20%;
+    background-color: white;
+}
+
+.form_container_review{
+    width:800px;
+    padding:0 50px 0 50px;
+    margin-bottom:15px;
+    margin-left:20%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.input_button{
+    color:white;
+    background-color: #4299e1;
+    border-width: 0px;
+    border-radius: 0px;
+    appearance: none;
+    text-align: center;
+    text-decoration: none;
+    padding:7px 10px 7px 10px;
+}
+
+.link_input_button{
+    color:white;
+    background-color: #4299e1;
+    border-width: 0px;
+    border-radius: 0px;
+    appearance: none;
+    text-align: center;
+    text-decoration: none;
+    padding:10px;
+    margin-right:5px;
+    position:relative;
+    float:right;
+}
+
+.input_field{
+    appearance: none;
+    display: block;
+    width: 100%;
+    border-style: solid;
+    border-radius: 0px;
+    border-width:1px;
+    border-color:rgb(224, 224, 224);
+    padding: 7px 0 7px 10px;
+    margin-bottom: 10px;
+}
+.form_comment{
+    padding-top: 100px;
+    padding-bottom: 15px ;
+}
+
+.comment_padding{
+    padding-top:15px;
+    padding-bottom:15px;
+}

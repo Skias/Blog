@@ -1,0 +1,14 @@
+<div class="form_container">
+    <%= form_for(:mess) do |f|  %>
+
+        <label class="label_input">
+            <%= f.text_field :title, :class => 'input_field', placeholder: 'Blog Title'%>
+        </label>
+        <label class="label_input">
+            <%= f.text_area :description, :class => 'input_field', placeholder: 'Tell your story :)', rows: 10, cols: 40%>
+        </label>
+
+        <%= f.submit 'Post', :class => 'input_button'%>
+            
+    <% end %>
+</div>
