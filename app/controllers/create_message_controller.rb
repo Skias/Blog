@@ -6,9 +6,13 @@ class CreateMessageController < ApplicationController
 
     def create
         
-        @message = Message.new(user_param)
+       @parameters =  params.require(:mess).permit(:title, :description, :image)
+
+        @message = Message.new(@parameters.title, @parameters.description)
+
+        @parameters.image
         
-        if !@message.title.blank? && !@message.description.blank? 
+        if !@message.title.blank? && !@message.description.blank?
             
             begin
 
@@ -32,10 +36,6 @@ class CreateMessageController < ApplicationController
             redirect_to '/create_message' 
         end
 
-    end
-    
-    private def user_param
-            params.require(:mess).permit(:title, :description)
     end
 
 end

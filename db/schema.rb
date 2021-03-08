@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_161432) do
+ActiveRecord::Schema.define(version: 2021_03_08_105234) do
 
   create_table "comments", force: :cascade do |t|
     t.string "review", null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2021_02_24_161432) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["message_id"], name: "index_comments_on_message_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "image_path", null: false
+    t.integer "user_id"
+    t.integer "message_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["image_path"], name: "index_images_on_image_path", unique: true
+    t.index ["message_id"], name: "index_images_on_message_id"
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -46,5 +57,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_161432) do
 
   add_foreign_key "comments", "messages"
   add_foreign_key "comments", "users"
+  add_foreign_key "images", "messages"
+  add_foreign_key "images", "users"
   add_foreign_key "messages", "users"
 end

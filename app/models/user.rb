@@ -14,4 +14,7 @@ class User < ApplicationRecord
 
     has_many :message
     has_many :comment, through: :message
+
+    has_many :image
+
 end
