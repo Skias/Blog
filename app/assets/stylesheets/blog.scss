@@ -1,14 +1,30 @@
 // Place all the styles related to the blog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.blog_post{
+.blog_post_with_image{
     height: 300px;
     width:300px;
     background-color:white;
-    padding:50px;
     margin:10px;
     position: relative;
     float:left;
+}
+.blog_post_without_image{
+    height: 300px;
+    width:300px;
+    background-color:white;
+    padding:50px 0 50px 50px;
+    margin:10px;
+    position: relative;
+    float:left;
+}
+.image_size{
+    width: 300px;
+    height: 175px;
+}
+.show_blog_image_size{
+    width: 600px;
+    height: 400px;   
 }
 
 .link_blog_decoration{
@@ -17,7 +33,7 @@
 }
 
 .form_container{
-    width:800px;
+    width:700px;
     padding:0 50px 0 50px;
     margin-bottom:15px;
     margin-left:20%;
@@ -25,7 +41,7 @@
 }
 
 .form_container_review{
-    width:800px;
+    width:700px;
     padding:0 50px 0 50px;
     margin-bottom:15px;
     margin-left:20%;

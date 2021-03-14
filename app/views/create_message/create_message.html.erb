@@ -1,15 +1,17 @@
 <div class="form_container">
-    <%= form_for(:mess) do |f|  %>
+    <%= form_for :mess, multipart: true do |f|  %>
 
         <label class="label_input">
-            <%= f.text_field :title, :class => 'input_field', placeholder: 'Blog Title'%>
+            <%= f.text_field :title, :class => 'input_field', :maxlength => 20, placeholder: 'Blog Title'%>
         </label>
         <label class="label_input">
             <%= f.text_area :description, :class => 'input_field', placeholder: 'Tell your story :)', rows: 10, cols: 40%>
         </label>
+        
         <label class="label_input">
             <%= f.file_field :image, :class => 'input_field'%>
         </label>
+        
         <%= f.submit 'Post', :class => 'input_button'%>
             
     <% end %>

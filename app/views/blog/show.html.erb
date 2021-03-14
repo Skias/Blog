@@ -1,6 +1,10 @@
 <div class="form_container">
 
     <div><h1><%= @message.title %></h1></div>
+        
+        <% if !@image.blank? && !@image[0]['image_path'].blank?%>
+            <%= image_tag @image[0]['image_path'], class: 'show_blog_image_size' %>
+        <%end%>
 
     <div><%= @message.description %></div>
 

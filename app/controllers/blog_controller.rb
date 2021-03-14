@@ -1,7 +1,9 @@
 class BlogController < ApplicationController
 
     def index
+
         @messages = Message.all
+        
     end
     
     def show
@@ -10,10 +12,12 @@ class BlogController < ApplicationController
             
             @message = Message.find(params[:id])
             @review = Comment.where(:message_id => @message.id)
+            @image = Image.where(:message_id => @message.id)
             
         rescue
-            flash[:notice] = 'Message was not found.'
+            flash[:notice] = 'Blog post was not found.'
             redirect_to '/index'
+            return
         end
         
     end

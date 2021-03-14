@@ -15,21 +15,24 @@ class RegisterController < ApplicationController
                 if @user.save
                     session[:user_id] = @user.id
                     redirect_to '/index'
+                    return
                 else
                     flash[:notice] = 'Something went wrong try again.'
                     redirect_to '/register'
+                    return
                 end
 
             rescue
 
                 flash[:notice] = 'username or email already exists!'
                 redirect_to '/register'
-
+                return
             end
 
         else 
             flash[:notice] = 'You must fill all fields'
             redirect_to '/register'
+            return
         end
 
     end

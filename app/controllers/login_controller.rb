@@ -13,14 +13,17 @@ class LoginController < ApplicationController
             if @user && @user.authenticate(params[:log][:password])
                 session[:user_id] = @user.id
                 redirect_to '/index'
+                return
             else 
                 flash[:notice] = 'Ops try again!'
                 redirect_to '/login'
+                return
             end
 
         else
             flash[:notice] = 'Username or password must not be empty!'
             redirect_to '/login'
+            return
         end
     end
 end

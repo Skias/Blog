@@ -12,9 +12,11 @@ class ReviewController < ApplicationController
         if @reviews.save
             flash[:notice] = 'Posted'
             redirect_to "/index/#{params[:id]}"
+            return
         else
             flash[:notice] = 'Not posted'
             redirect_to "/index/#{params[:id]}"
+            return
         end
     end
 
@@ -33,14 +35,17 @@ class ReviewController < ApplicationController
             if @message.update(message_attributes)
                 flash[:notice] = 'review has been updated!'
                 redirect_to "/review/#{params[:id]}"
+                return
             else
                 flash[:notice] = 'Comment updated.'
                 redirect_to "/review/#{params[:id]}"
+                return
             end
 
         rescue
             flash[:notice] = 'Here.'
             redirect_to "/review/#{params[:id]}"
+            return
         end
     end
 
@@ -54,9 +59,11 @@ class ReviewController < ApplicationController
         if @del_message[0].blank?
              flash[:notice] = 'Blog comment was not found.'
              redirect_to "/index"
+             return
         else
             @del_message[0].destroy
             redirect_to "/index/#{params[:id]}"
+            return
         end
     end
 end

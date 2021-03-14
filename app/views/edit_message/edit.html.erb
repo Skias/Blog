@@ -2,13 +2,29 @@
 
     <%= form_for(:update) do |f|  %>
 
-        <%= f.text_field :title, value: @messages[0][:title], :class => 'edit_input_field', placeholder: 'Title'%>
+        <%= f.text_field :title, value: @messages[0][:title], :class => 'edit_input_field', :maxlength => 20, placeholder: 'Title'%>
 
 
         <%= f.text_area :description, value: @messages[0][:description], :class => 'edit_input_field', placeholder: 'Tell your story :)', rows: 10, cols: 40 %>
+        
+        <% if @change_image.blank?%>
 
-        <%= f.submit 'Update', class: 'edit_input_button'%>
+            <%= f.file_field :image, :class => 'input_field'%>
+
+        <%else%>
             
+            <%= image_tag @change_image[0]['image_path'], :class => 'image_size'%>
+                <p>Replace current image</p>
+            <%= f.file_field :image, :class => 'input_field' %>
+            <div>
+                <p style='display:inline'>Delete Image</p>
+                <%= f.select :delete_image,raw("<option value='yes'>Yes</option><option value='no' selected>No</option>") %>
+            </div>
+            
+        <%end%>
+       
+        <%= f.submit 'Update', class: 'edit_input_button'%>        
+
     <% end %>
 
 </div>
